@@ -15,6 +15,19 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
         }
+		
+		.container {
+            display: flex;
+            flex-direction: column; /* Stacks items vertically */
+            align-items: center;
+            gap: 10px; /* Space between the hearts and the text */
+        }
+
+        .big-heart {
+            font-size: 80px; /* Adjust size of the hearts here */
+            color: #ff4d6d;
+            animation: heartbeat 1.2s infinite;
+        }
 
         h1 {
             font-size: 15vw; /* Scales with the screen width */
@@ -34,6 +47,12 @@
     </style>
 </head>
 <body>
-    <h1>Will You Be My Valentine My Gorgeous Girl?</h1>
+	
+	<div class="container">
+		<div class="big-heart">❤️</div>
+		<h1>Will You Be My Valentine My Gorgeous Girl?</h1>
+		<div class="big-heart">❤️</div>
+	</div>
+	
 </body>
 </html>
