@@ -11,10 +11,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Changed to min-height for scrolling if needed */
             background-color: #fff0f3;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
         }
 
         .container {
@@ -25,6 +24,7 @@
             gap: 20px;
             text-align: center;
             width: 90%;
+            padding: 20px 0;
         }
 
         #question-section {
@@ -32,6 +32,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
+            width: 100%;
         }
 
         .big-heart {
@@ -52,6 +53,7 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
+            width: 100%;
         }
 
         .yes-btn {
@@ -61,14 +63,36 @@
             padding: 12px 25px;
             font-size: 1.2rem;
             border-radius: 50px;
+            cursor: pointer;
             box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+            transition: transform 0.2s;
         }
 
+        .yes-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* Celebration Screen Layout */
         #celebration-text {
-            display: none; /* Stays hidden until JS runs */
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .yay-title {
             font-size: 12vw;
             color: #ff4d6d;
             font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .celebration-gif {
+            width: 80%;
+            max-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         @keyframes heartbeat {
@@ -89,17 +113,15 @@
             <h1>Will You Be My Valentine, Cailyn?❤️🙏</h1>
             <div class="button-group">
                 <button class="yes-btn" onclick="showYay()">Yes</button>
-                <i style="color: #ff758f;">or</i>
+                <i style="color: #ff758f; font-style: italic;">or</i>
                 <button class="yes-btn" onclick="showYay()">Yes</button>
             </div>
         </div>
 
         <div id="celebration-text">
-            <div>Yaaaaay!</div>
-            <img src="https://tenor.com/view/happy-happy-happy-gif-6201622217547275472" 
-                 style="width: 250px; border-radius: 15px; margin-top: 20px;">
-			<img src="https://tenor.com/view/kitty-cat-cat-in-love-in-love-cat-happy-gif-10000605937555107357"
-				 style="width: 250px; border-radius: 15px; margin-top: 20px;">
+            <div class="yay-title">Yaaaaay!</div>
+            <img src="https://media.tenor.com/716Y6pA6E4AAAAAi/happy-happy-happy.gif" alt="Happy Happy Cat" class="celebration-gif">
+            <img src="https://media.tenor.com/fA0u_K9yv_oAAAAi/kitty-cat-cat-in-love.gif" alt="In Love Cat" class="celebration-gif">
         </div>
 
         <div class="big-heart">❤</div>
@@ -108,7 +130,7 @@
     <script>
         function showYay() {
             document.getElementById('question-section').style.display = 'none';
-            document.getElementById('celebration-text').style.display = 'block';
+            document.getElementById('celebration-text').style.display = 'flex';
         }
     </script>
 </body>
