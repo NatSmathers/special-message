@@ -11,32 +11,68 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #fff0f3; /* Soft pink background */
+            background-color: #fff0f3;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
         }
-		
-		.container {
+
+        .container {
             display: flex;
-            flex-direction: column; /* Stacks items vertically */
+            flex-direction: column;
             align-items: center;
-            gap: 10px; /* Space between the hearts and the text */
+            gap: 20px;
+            text-align: center;
         }
 
         .big-heart {
-            font-size: 80px; /* Adjust size of the hearts here */
+            font-size: 60px;
             color: #ff4d6d;
             animation: heartbeat 1.2s infinite;
         }
 
         h1 {
-            font-size: 15vw; /* Scales with the screen width */
+            font-size: 10vw;
             color: #ff4d6d;
-            text-align: center;
-            animation: heartbeat 1.2s infinite;
+            margin: 0;
         }
 
-        /* Fun animation to make it feel alive */
+        .button-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .yes-btn {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .yes-btn:active {
+            transform: scale(0.95);
+        }
+
+        .or-text {
+            font-size: 1.2rem;
+            color: #ff758f;
+            font-style: italic;
+        }
+
+        /* Styling for the final message */
+        #celebration-text {
+            font-size: 12vw;
+            color: #ff4d6d;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+
         @keyframes heartbeat {
             0% { transform: scale(1); }
             14% { transform: scale(1.1); }
@@ -47,14 +83,33 @@
     </style>
 </head>
 <body>
-	
-	<div class="container">
-		<div class="big-heart">❤️</div>
-		<h1>Will You Be My Valentine, Cailyn?</h1>
-		<div class="big-heart">❤️</div>
-	</div>
-	
+
+    <div class="container">
+        <div class="big-heart">❤</div>
+        
+        <div id="question-section">
+            <h1>Will You Be My Valentine, Cailyn?🙏</h1>
+            <div class="button-group">
+                <button class="yes-btn" onclick="showYay()">Yes</button>
+                <span class="or-text">or</span>
+                <button class="yes-btn" onclick="showYay()">Yes</button>
+            </div>
+        </div>
+
+        <div id="celebration-text">Yaaaaay!</div>
+
+        <div class="big-heart">❤</div>
+    </div>
+
+    <script>
+        function showYay() {
+            // Hide the question and buttons
+            document.getElementById('question-section').style.display = 'none';
+            
+            // Show the "Yaaaaay!" text
+            document.getElementById('celebration-text').style.display = 'block';
+        }
+    </script>
+
 </body>
 </html>
-
-
