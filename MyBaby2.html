@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Changed to min-height for scrolling if needed */
+            min-height: 100vh;
             background-color: #fff0f3;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -68,11 +68,6 @@
             transition: transform 0.2s;
         }
 
-        .yes-btn:active {
-            transform: scale(0.9);
-        }
-
-        /* Celebration Screen Layout */
         #celebration-text {
             display: none; 
             flex-direction: column;
@@ -85,14 +80,14 @@
             font-size: 12vw;
             color: #ff4d6d;
             font-weight: bold;
-            margin-bottom: 10px;
         }
 
         .celebration-gif {
             width: 80%;
             max-width: 250px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2);
+            background-color: white; /* Temporary background while loading */
         }
 
         @keyframes heartbeat {
@@ -110,7 +105,7 @@
         <div class="big-heart">❤</div>
         
         <div id="question-section">
-            <h1>Will You Be My Valentine, Cailyn?❤️🙏</h1>
+            <h1>Will You Be My Valentine, Cailyn? 🙏</h1>
             <div class="button-group">
                 <button class="yes-btn" onclick="showYay()">Yes</button>
                 <i style="color: #ff758f; font-style: italic;">or</i>
@@ -120,8 +115,8 @@
 
         <div id="celebration-text">
             <div class="yay-title">Yaaaaay!</div>
-            <img src="https://media.tenor.com/716Y6pA6E4AAAAAi/happy-happy-happy.gif" alt="Happy Happy Cat" class="celebration-gif">
-            <img src="https://media.tenor.com/fA0u_K9yv_oAAAAi/kitty-cat-cat-in-love.gif" alt="In Love Cat" class="celebration-gif">
+            <img src="https://media1.tenor.com/m/716Y6pA6E4AAAAAC/happy-happy-happy.gif" alt="Happy Happy Cat" class="celebration-gif">
+            <img src="https://media1.tenor.com/m/fA0u_K9yv_oAAAAC/kitty-cat-cat-in-love.gif" alt="In Love Cat" class="celebration-gif">
         </div>
 
         <div class="big-heart">❤</div>
